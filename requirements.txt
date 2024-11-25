@@ -1,0 +1,4 @@
+pylint = 3.0.2
+pytest
+black = 24.3.0
+pytest-cov
