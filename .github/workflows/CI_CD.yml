@@ -1,4 +1,4 @@
-name: Python Template test with Github Actions
+name: CI_CD
 on: [push]
 jobs:
   build:
