@@ -7,9 +7,10 @@ import boto3
 from flask import Flask, render_template, request
 import google.generativeai as genai
 from dotenv import load_dotenv
-from mylib import query
+from  import query
 from mylib import gemini
 
+gemini.py
 
 load_dotenv()  # Get AWS credentials from environment (optional if using AWS CLI config)
 aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
