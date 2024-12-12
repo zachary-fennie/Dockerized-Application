@@ -18,9 +18,11 @@
 ## A Flask app is a web application built using the Flask web framework, which is a lightweight and flexible framework for building web applications in Python. Flask is often used for creating small to medium-sized web applications, APIs, and microservices due to its simplicity and ease of use.
 
 # Screenshots of Flask App
-## I decided to build upon and expand my test flask app for our final project. While the screenshots don't do the app justice, the final & functional version will be accessbile in our final project which I will link here [insert link when complete]
+## I built upon and expanded on the flask app for the final project. Since I liked it so much, I decided to update this project with it for my repo.
+## Homepage
 <img width="1512" alt="Screenshot 2024-12-10 at 11 28 47 PM" src="https://github.com/user-attachments/assets/be52006e-6865-4bf6-969e-0b95dc2e55c3">
 
+## Project Page
 <img width="1512" alt="Screenshot 2024-12-10 at 11 29 18 PM" src="https://github.com/user-attachments/assets/922baf4b-6475-4765-818b-18aab49081d8">
 
 Includes (but is not limited to):
