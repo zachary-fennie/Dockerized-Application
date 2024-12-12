@@ -35,6 +35,6 @@ Includes (but is not limited to):
     * `query.py`
 - .devcontainer
 - Makefile
-- CI/CD pipeline
+- CI/CD pipeline: Docker Edition
 - requirements.txt
 - README.md
