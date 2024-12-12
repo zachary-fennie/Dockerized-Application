@@ -7,10 +7,9 @@ import boto3
 from flask import Flask, render_template, request
 import google.generativeai as genai
 from dotenv import load_dotenv
-from  import query
-from mylib import gemini
+from mylib.query import book_query
+from mylib.gemini import gemini_prompt
 
-gemini.py
 
 load_dotenv()  # Get AWS credentials from environment (optional if using AWS CLI config)
 aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
@@ -29,7 +28,7 @@ dynamodb = boto3.resource(
 genai.configure(api_key=os.getenv("API"))
 
 # Initialize the Flask app
-app = Flask(__name__)
+app = Flask(__name__, template_folder="template")
 
 
 # Home route
@@ -61,11 +60,11 @@ def submit():
     # Logic for handling different options (if needed)
     if option == "Author":
         # DynamoDB query
-        result = query.book_query(dynamodb, user_input)
+        result = book_query(dynamodb, user_input)
 
     elif option == "Gemini":
         try:
-            result = gemini.gemini_prompt(
+            result = gemini_prompt(
                 user_input
             )  # Call your gemini function with the user input
         except Exception as e:
@@ -77,5 +76,11 @@ def submit():
     return render_template("result.html", result=result)  # Display result page
 
 
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Retrieve host and port from environment variables or use defaults
+    host = os.getenv("FLASK_RUN_HOST", "0.0.0.0")  # Default to 0.0.0.0 for Docker
+    port = int(os.getenv("FLASK_RUN_PORT", 8000))
+    app.run(host=host, port=port, debug=True)

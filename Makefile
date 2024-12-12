@@ -1,14 +1,20 @@
-install:
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+# Define image name
+IMAGE_NAME = zfenn/app
 
-format:
-	black main.py
+# Set the port for the application
+PORT = 8000
 
-lint:
-	pylint --disable=R,C funcs.py
+# Build Docker image
+build:
+	docker build -t $(IMAGE_NAME) .
 
-test:
-	python -m pytest -vv --cov=hello test_main.py
+# Run the Docker container
+run:
+	docker run --name $(IMAGE_NAME)-container -p $(PORT):8000 $(IMAGE_NAME)
 
-all: install lint test
+# Push Docker image to Docker Hub
+push:
+	docker push $(IMAGE_NAME)
+
+
+

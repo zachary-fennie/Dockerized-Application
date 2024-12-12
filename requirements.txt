@@ -2,3 +2,8 @@ pylint == 3.0.2
 pytest
 black == 24.3.0
 pytest-cov
+flask == 2.2.5
+google-generativeai
+boto3
+python-dotenv
+requests
